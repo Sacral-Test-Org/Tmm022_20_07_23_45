@@ -1,0 +1,58 @@
+<div class="part-validation-form">
+  <form #partForm="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="partId">Part ID</label>
+      <input type="text" id="partId" name="partId" [(ngModel)]="part.partId" required #partId="ngModel">
+      <div *ngIf="partId.invalid && partId.touched" class="error">Part ID is required.</div>
+    </div>
+
+    <div>
+      <label for="unitName">Unit Name</label>
+      <input type="text" id="unitName" name="unitName" [(ngModel)]="part.unitName" required #unitName="ngModel">
+      <div *ngIf="unitName.invalid && unitName.touched" class="error">Unit Name is required.</div>
+    </div>
+
+    <div>
+      <label for="groupName">Group Name</label>
+      <input type="text" id="groupName" name="groupName" [(ngModel)]="part.groupName" required #groupName="ngModel">
+      <div *ngIf="groupName.invalid && groupName.touched" class="error">Group Name is required.</div>
+    </div>
+
+    <div>
+      <label for="lineDescription">Line Description</label>
+      <input type="text" id="lineDescription" name="lineDescription" [(ngModel)]="part.lineDescription" required #lineDescription="ngModel">
+      <div *ngIf="lineDescription.invalid && lineDescription.touched" class="error">Line Description is required.</div>
+    </div>
+
+    <div>
+      <label for="partNumber">Part Number</label>
+      <input type="text" id="partNumber" name="partNumber" [(ngModel)]="part.partNumber" required #partNumber="ngModel">
+      <div *ngIf="partNumber.invalid && partNumber.touched" class="error">Part Number is required.</div>
+    </div>
+
+    <div>
+      <label for="partDescription">Part Description</label>
+      <input type="text" id="partDescription" name="partDescription" [(ngModel)]="part.partDescription" required #partDescription="ngModel">
+      <div *ngIf="partDescription.invalid && partDescription.touched" class="error">Part Description is required.</div>
+    </div>
+
+    <div>
+      <label for="partStatus">Part Status</label>
+      <input type="text" id="partStatus" name="partStatus" [(ngModel)]="part.partStatus" required #partStatus="ngModel">
+      <div *ngIf="partStatus.invalid && partStatus.touched" class="error">Part Status is required.</div>
+    </div>
+
+    <div class="buttons">
+      <button type="button" (click)="onSave()" [disabled]="partForm.invalid">Save</button>
+      <button type="button" (click)="onUpdate()" [disabled]="partForm.invalid">Update</button>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+  </form>
+</div>

@@ -1,0 +1,29 @@
+<div class="main-window" style="width: 100%; height: 100%;">
+  <h1>T K A P - [IS]</h1>
+  <div class="header-section">
+    <label for="current-date">Current Date:</label>
+    <input id="current-date" type="text" [value]="currentDate | date:'shortDate'" readonly>
+    <label for="mode">Mode:</label>
+    <input id="mode" type="text" value="Create Mode" readonly>
+  </div>
+  <div class="form-fields">
+    <label for="group-id">Group ID:</label>
+    <input id="group-id" type="text" [(ngModel)]="formData.groupId" [disabled]="!isCreateMode">
+    <label for="part-number">Part Number:</label>
+    <input id="part-number" type="text" [(ngModel)]="formData.partNumber" [disabled]="!isCreateMode">
+    <label for="part-status">Part Status:</label>
+    <input id="part-status" type="text" [(ngModel)]="formData.partStatus" [disabled]="!isCreateMode">
+    <label for="part-description">Part Description:</label>
+    <input id="part-description" type="text" [(ngModel)]="formData.partDescription" [disabled]="!isCreateMode">
+    <label for="line-id">Line ID:</label>
+    <input id="line-id" type="text" [(ngModel)]="formData.lineId" [disabled]="!isCreateMode">
+    <label for="unit-id">Unit ID:</label>
+    <input id="unit-id" type="text" [(ngModel)]="formData.unitId" [disabled]="!isCreateMode">
+  </div>
+  <div class="form-buttons">
+    <button (click)="saveForm()">SAVE</button>
+    <button (click)="clearForm()">CLEAR</button>
+    <button (click)="editForm()">EDIT</button>
+    <button (click)="exitForm()">EXIT</button>
+  </div>
+</div>

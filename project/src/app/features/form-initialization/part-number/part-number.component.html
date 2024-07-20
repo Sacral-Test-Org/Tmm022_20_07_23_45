@@ -1,0 +1,8 @@
+<div>
+  <input type="text" id="partNumber" (dblclick)="onPartNumberDblClick()" (click)="onPartNumberClick()" (blur)="onPartNumberBlur()" placeholder="Enter Part Number" />
+  <div *ngIf="partNumberList.length > 0" id="part-number-list">
+    <ul>
+      <li *ngFor="let part of partNumberList" (click)="selectPartNumber(part)">{{ part.partNo }} - {{ part.description }}</li>
+    </ul>
+  </div>
+</div>
